@@ -13,10 +13,13 @@ public class Door : MonoBehaviour
     public Collider sensor1;
     public Collider sensor2;
 
+    Animator myAnimator;
+
     // Start is called before the first frame update
 
     void Start()
     {
+        myAnimator = gameObject.GetComponent("Animator") as Animator;
     }
 
     // Update is called once per frame
@@ -28,22 +31,23 @@ public class Door : MonoBehaviour
         if(isLocked == false && isOpen == false){
         isOpen = true;
 // Open Door
-        gameObject.SetActive(false);
-       InvokeRepeating("Countdown",0f,1f);
-       Debug.Log("Opening Door"+ " Starting Door Timer");
+        myAnimator.SetBool("Open", true);
+        Debug.Log("Opening Door");
+        StartCoroutine("Timer");
+        }
+    }
+     public void CloseDoor(){
+        if(isOpen == true){
+        isOpen = false;
+        myAnimator.SetBool("Open", false);
         }
     }
     public void UnlockDoor(){
         
     }
-    public void Countdown(){
-        if(timeRemaining < 0){
-            timeRemaining --;
-            Debug.Log(timeRemaining);
-        }
-        else{
-            isOpen = false;
-            gameObject.SetActive(true);
-        }
+    IEnumerator Timer(){
+        if(timeRemaining >= 0)
+            yield return new WaitForSeconds(timeRemaining);
+            CloseDoor();
     }
 }

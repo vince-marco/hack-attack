@@ -18,5 +18,6 @@ public class DoorTrigger : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other){
         Door.BroadcastMessage("OpenDoor");
+        Debug.Log("Movement Detected");
     }
 }
