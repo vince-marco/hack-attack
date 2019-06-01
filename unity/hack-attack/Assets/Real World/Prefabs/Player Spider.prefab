@@ -1,0 +1,228 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6819642430403007331
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 111112, guid: 515efa5601ae3c84e8f2fef8930c9e61,
+    type: 2}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6819642430403007330}
+  - component: {fileID: 6819642430403007341}
+  - component: {fileID: 6819642430403007343}
+  - component: {fileID: 6819642430403007340}
+  m_Layer: 0
+  m_Name: Player Spider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6819642430403007330
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 437718, guid: 515efa5601ae3c84e8f2fef8930c9e61,
+    type: 2}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6819642430403007331}
+  m_LocalRotation: {x: 0, y: -0.91701335, z: 0, w: -0.39885667}
+  m_LocalPosition: {x: -9.58, y: 0.010000005, z: 13.14}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_Children:
+  - {fileID: 6819642431834316854}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &6819642430403007341
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 9525548, guid: 515efa5601ae3c84e8f2fef8930c9e61,
+    type: 2}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6819642430403007331}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 9b0c401ffe32a624eb08aaaa6b6727cd, type: 3}
+  m_Controller: {fileID: 9100000, guid: 9203ca2cb2a3bce40ad9982165313a2b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6819642430403007343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 11484602, guid: 515efa5601ae3c84e8f2fef8930c9e61,
+    type: 2}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6819642430403007331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 144eb3ed7aca3dc4d9a5b0220d976b22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _IsEnabled: 0
+  _InputSourceOwner: {fileID: 0}
+  _MovementSpeed: 2
+  _RotationSpeed: 90
+  _JumpForce: 5
+  JumpToWallSpeed: 4
+  JumpToWallOrientSpeed: 0.75
+  JumpToWallHeight: 1.5
+  JumpToWallDistance: 1.5
+  JumpToWallTimeout: 1
+  JumpToWallArrivalDistance: 0.03
+--- !u!114 &6819642430403007340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 11490272, guid: 515efa5601ae3c84e8f2fef8930c9e61,
+    type: 2}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6819642430403007331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6696137b9a781c4ab59158926ed71cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _IsInternalUpdateEnabled: 1
+  _IsFixedUpdateEnabled: 0
+  _FixedUpdateFPS: 60
+  EditorComponentInitialized: 1
+  _IsEnabled: 1
+  _UseTransformPosition: 0
+  _UseTransformRotation: 1
+  _ProcessInLateUpdate: 1
+  _StateCount: 20
+  _InvertRotationOrder: 0
+  _ExtrapolatePhysics: 0
+  _IsGravityEnabled: 1
+  _IsGravityRelative: 1
+  _Gravity: {x: 0, y: 0, z: 0}
+  _ApplyGravityInFixedUpdate: 1
+  _Height: 1.8
+  _Radius: 0.35
+  _Mass: 2
+  _SkinWidth: 0.01
+  _AltSkinWidth: 0.5
+  _GroundingStartOffset: 0.6
+  _GroundingDistance: 3
+  _IsGroundingLayersEnabled: 0
+  _GroundingLayers: 1
+  _GroundDampenFactor: 0.92
+  _BaseRadius: 0.1
+  _FixGroundPenetration: 1
+  _ForceGrounding: 1
+  _ForceGroundingDistance: 0.3
+  _IsCollisionEnabled: 1
+  _StopOnRotationCollision: 0
+  _AllowPushback: 0
+  _CollisionLayers: 4097
+  _OverlapRadius: 0.5
+  _OverlapCenter: {x: 0, y: 0.3, z: 0}
+  _IsSlidingEnabled: 0
+  _MinSlopeAngle: 20
+  _MinSlopeGravityCoefficient: 1
+  _MaxSlopeAngle: 0
+  _UseStepHeightWithMaxSlope: 1
+  _SlopeMovementStep: 0.01
+  _OrientToGround: 1
+  _KeepOrientationInAir: 0
+  _OrientToGroundDistance: 2
+  _OrientToGroundSpeed: 1.5
+  _MinOrientToGroundAngleForSpeed: 1
+  _MaxStepHeight: 0.3
+  _MinStepDepth: 0.25
+  _StepUpSpeed: 0.75
+  _MaxStepUpAngle: 10
+  _StepDownSpeed: 0.75
+  _FreezePositionX: 0
+  _FreezePositionY: 0
+  _FreezePositionZ: 0
+  _FreezeRotationX: 0
+  _FreezeRotationY: 0
+  _FreezeRotationZ: 0
+  _ShowDebug: 0
+  mBodyShapeDefinitions:
+  - '{, "Type" : "com.ootii.Actors.BodySphere, ootii, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null", "Offset" : "(0, -0.050000001, 0)", "Radius" : "0.25", "Name"
+    : "Body Sphere", "UseUnityColliders" : "True", "IsEnabledOnGround" : "True", "IsEnabledOnSlope"
+    : "True", "IsEnabledAboveGround" : "True", "Transform" : "mine_bot/minebot_main/minebot_head"}'
+  EditorBodyShapeIndex: 0
+  EditorShowAdvanced: 0
+  EditorCollideWithObjects: 1
+  EditorWalkOnWalls: 1
+  EditorSlideOnSlopes: 0
+  EditorRespondToColliders: 0
+--- !u!1001 &6819642431834454708
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6819642430403007330}
+    m_Modifications:
+    - target: {fileID: 400002, guid: 9b0c401ffe32a624eb08aaaa6b6727cd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 9b0c401ffe32a624eb08aaaa6b6727cd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 9b0c401ffe32a624eb08aaaa6b6727cd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 9b0c401ffe32a624eb08aaaa6b6727cd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 9b0c401ffe32a624eb08aaaa6b6727cd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 9b0c401ffe32a624eb08aaaa6b6727cd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 9b0c401ffe32a624eb08aaaa6b6727cd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 9b0c401ffe32a624eb08aaaa6b6727cd, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 9b0c401ffe32a624eb08aaaa6b6727cd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 9b0c401ffe32a624eb08aaaa6b6727cd, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 9b0c401ffe32a624eb08aaaa6b6727cd, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 9b0c401ffe32a624eb08aaaa6b6727cd, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 9203ca2cb2a3bce40ad9982165313a2b, type: 2}
+    m_RemovedComponents:
+    - {fileID: 9500000, guid: 9b0c401ffe32a624eb08aaaa6b6727cd, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 9b0c401ffe32a624eb08aaaa6b6727cd, type: 3}
+--- !u!4 &6819642431834316854 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400002, guid: 9b0c401ffe32a624eb08aaaa6b6727cd,
+    type: 3}
+  m_PrefabInstance: {fileID: 6819642431834454708}
+  m_PrefabAsset: {fileID: 0}
