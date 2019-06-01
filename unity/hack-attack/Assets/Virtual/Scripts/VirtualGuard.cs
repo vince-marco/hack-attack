@@ -5,9 +5,9 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "VirtualGuard")]
 public class VirtualGuard : ScriptableObject {
 
-    [SerializeField] string name;  
+    [SerializeField] string vname;  
     [SerializeField] int duration;  
     [TextArea(10, 14)][SerializeField] string helptext;
 
-    [SerializeField] ArrayList<VirtualCmd> commands = new ArrayList<VirtualCmd>();
+    ArrayList commands = new ArrayList();
 }

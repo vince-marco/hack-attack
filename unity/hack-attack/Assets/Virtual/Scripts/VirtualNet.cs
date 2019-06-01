@@ -5,7 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "VirtualNet")]
 public class VirtualNet : ScriptableObject {
 
+    [SerializeField] string subnet;
     [TextArea(10, 14)][SerializeField] string help;
 
-    [SerializeField] ArrayList<VirtualConnect>  connects = new ArrayList<VirtualConnect>();
+    ArrayList connects = new ArrayList();
 }

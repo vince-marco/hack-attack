@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "VirtualServer")]
-public class VirtualServer: MonoBehavior {
+public class VirtualServer : MonoBehaviour {
 
     [SerializeField] string hostname;  
     [SerializeField] string ip;  
@@ -12,4 +11,18 @@ public class VirtualServer: MonoBehavior {
    [TextArea(10, 14)][SerializeField] string greeting;
    [TextArea(10, 14)][SerializeField] string ping;
    [TextArea(10, 14)][SerializeField] string unauthorized;
+
+  // Start is called before the first frame update
+    void Start()
+    {
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+    }
+    void FixedUpdate()
+    {
+
+    }
 }

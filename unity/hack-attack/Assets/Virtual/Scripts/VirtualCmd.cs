@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "VirtualCmd")]
 public class VirtualCmd : ScriptableObject {
 
-    [SerializeField] string name;  
+    [SerializeField] string vname;  
     [SerializeField] string usage;  
    [TextArea(10, 14)][SerializeField] string helptext;
 }

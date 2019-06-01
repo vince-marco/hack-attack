@@ -5,8 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "VirtualApp")]
 public class VirtualApp : ScriptableObject {
 
-    [SerializeField] string name;  
+    [SerializeField] string vname;  
     [TextArea(10, 14)][SerializeField] string helptext;
 
-    [SerializeField] ArrayList<VirtualCmd> commands = new ArrayList<VirtualCmd>();
+    ArrayList commands = new ArrayList();
 }
