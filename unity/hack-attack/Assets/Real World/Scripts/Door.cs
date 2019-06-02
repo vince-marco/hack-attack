@@ -32,7 +32,6 @@ public class Door : MonoBehaviour
         isOpen = true;
 // Open Door
         myAnimator.SetBool("Open", true);
-        Debug.Log("Opening Door");
         StartCoroutine("Timer");
         }
     }
