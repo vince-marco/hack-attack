@@ -12,6 +12,14 @@ public class VirtualServer : MonoBehaviour {
    [TextArea(10, 14)][SerializeField] string ping;
    [TextArea(10, 14)][SerializeField] string unauthorized;
 
+   [SerializeField] VirtualPort[] ports;
+    private VirtualCmd[]  commands = {
+        new VirtualCmd("start", "door start <id> [-f <keyfile>]", "Starts the alarm detection"),
+        new VirtualCmd("stop", "door stop <id> [-f <keyfile>]", "Stops the alarm detection"),
+        new VirtualCmd("trigger", "door trigger <id> [-f <keyfile>]", "Triggers the alarm"),
+        new VirtualCmd("quiet", "door quiet <id> [-f <keyfile>]", "Sets alarm to not triggered")
+    };
+
   // Start is called before the first frame update
     void Start()
     {

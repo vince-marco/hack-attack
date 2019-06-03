@@ -6,11 +6,12 @@ using UnityEngine.UI;
 public class VirtualSystem : MonoBehaviour {
 
     private float timeLeft = 30.0f;
-    [SerializeField] Text textview;
+    [SerializeField] public Text textview;
     [TextArea(2, 5)][SerializeField] string consoleGreeting;
     [TextArea(2, 5)][SerializeField] string term1Greeting;
     [TextArea(2, 5)][SerializeField] string term2Greeting;
     [TextArea(2, 5)][SerializeField] string term3Greeting;
+    private VirtualCmd[]  commands = {};
 
   // Start is called before the first frame update
     void Start()
@@ -27,9 +28,9 @@ public class VirtualSystem : MonoBehaviour {
         timeLeft = 30.0f;
       }
     }
-    void FixedUpdate()
-    {
 
+    void doCommand(string cmd) {
+      Debug.Log("perofrming cmd: " + cmd.ToString());
     }
 
 }

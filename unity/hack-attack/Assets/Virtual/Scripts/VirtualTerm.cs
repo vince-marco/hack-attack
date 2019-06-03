@@ -10,11 +10,14 @@ public class VirtualTerm : MonoBehaviour
     [SerializeField] Text term3;
     [SerializeField] Text console;
 
+    private Text term;
+
     // Start is called before the first frame update
     void Start()
     {
         var input = gameObject.GetComponent<InputField>();
         input.onEndEdit.AddListener(SubmitCmd);
+        term = term1;
     }
 
     // Update is called once per frame
@@ -26,29 +29,26 @@ public class VirtualTerm : MonoBehaviour
     void SubmitCmd(string cmd) 
     {
         var input = gameObject.GetComponent<InputField>();
-        if (input.text.Contains(" -1")) 
+        if (input.text.Contains("term -1")) 
         {
-            term1.text += "\n> ";
-            term1.text += input.text;
-            term1.text += "...executing\n";
+            term = term1;
+            term1.text += "\nTerminal-1 is active.\n";
         }
         else if (input.text.Contains(" -2")) 
         {
-            term2.text += "\n> ";
-            term2.text += input.text;
-            term2.text += "...executing\n";
+            term = term2;
+            term1.text += "\nTerminal-2 is active.\n";
         }
         else if (input.text.Contains(" -3")) 
         {
-            term3.text += "\n> ";
-            term3.text += input.text;
-            term3.text += "...executing\n";
+            term = term1;
+            term1.text += "\nTerminal-1 is active.\n";
         }
         else
         {
-            console.text += "\n> ";
-            console.text += input.text;
-            console.text += "...executing\n";
+            term.text += "\n> ";
+            term.text += input.text;
+            term.text += "...executing\n";
         }
         input.text = "";
     }
