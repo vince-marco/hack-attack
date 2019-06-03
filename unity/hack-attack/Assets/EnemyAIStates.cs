@@ -57,22 +57,12 @@ public class Patrol : IState
 
     public Patrol (EnemyAI owner) {this.owner = owner;}
     public GameObject myParentObject;
-    public com.ootii.Actors.SpiderAIDriver myController;
-    public EnemyAI myAI;
-    public GameObject PathNest;
-    public Transform[] PathTranforms;
 
     public void Enter(GameObject parentObject){
         Debug.Log("entering test state, my object is:" + parentObject);
-        myParentObject = parentObject;
-        myController = myParentObject.GetComponentInChildren<com.ootii.Actors.SpiderAIDriver>();
-        myAI = parentObject.GetComponent<EnemyAI>();
-        /* for(int i; i < ;i++){
-            Transform[] 
-        }
-        myController.Target = PathTranforms[0];
-        myAI.IsInvoking = true;
-         */
+        owner.Cyclepath();
+        myAI.IsLooking = true;
+        
         //Set 1st Patrol Point: Robot/SpiderAIDriver/Target(Transform)
     }
     public void Execute(){
