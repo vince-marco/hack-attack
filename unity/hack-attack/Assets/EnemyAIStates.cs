@@ -4,22 +4,6 @@ using UnityEngine;
 
 public class EnemyAIStates : MonoBehaviour
 {}//This is just here to make Unity happy. (:
-public class TestState : IState 
-{
-    EnemyAI owner;
-
-    public TestState (EnemyAI owner) {this.owner = owner;}
-    public GameObject myParentObject;
-    public void Enter(GameObject parentObject){
-        Debug.Log("entering test state, my object is:" + parentObject);
-        myParentObject = parentObject;
-    }
-    public void Execute(){}
-       
-    public void Exit(){
-        Debug.Log("exit test state");
-    }
-}
 public class Inactive : IState 
 {
     EnemyAI owner;
@@ -27,27 +11,14 @@ public class Inactive : IState
     public Inactive (EnemyAI owner) {this.owner = owner;}
 
     public GameObject myParentObject;
-    public com.ootii.Actors.SpiderAIDriver myController;
-    public EnemyAI myAI;
-    
-
     public void Enter(GameObject parentObject){
-        Debug.Log("entering test state, my object is:" + parentObject);
         myParentObject = parentObject;
-        myController = myParentObject.GetComponentInChildren<com.ootii.Actors.SpiderAIDriver>();
-        myController.Target = null;
-        myAI = parentObject.GetComponent<EnemyAI>();
-        //myAI.IsInvoking = false;
+        owner.SetDestination(null);
     }
      public void Execute(){
-        
-        //Do Nothing
-        //Idle or Inactive Animation?
+         owner.CheckForActivation();
     }
     public void Exit(){
-        Debug.Log("exit test state");
-        //Do Nothing
-        //Reactivate Animation?
     }
 }
 public class Patrol : IState 
@@ -57,39 +28,43 @@ public class Patrol : IState
     public Patrol (EnemyAI owner) {this.owner = owner;}
     public GameObject myParentObject;
 
+    public EnemyAI myController;
+
     public void Enter(GameObject parentObject){
-        Debug.Log("entering test state, my object is:" + parentObject);
+        myController = parentObject.GetComponentInChildren<EnemyAI>();
         owner.Cyclepath();
-        //myAI.IsLooking = true;
-        
-        //Set 1st Patrol Point: Robot/SpiderAIDriver/Target(Transform)
     }
     public void Execute(){
-       
-        //Check for reaching 1st Patrol Point
-        //If yes, Set nth Patrol Point + 1: Robot/SpiderAIDriver/Target(Transform)
-        //else do nothing
+       // Debug.Log(myController.gameObject.GetComponentInChildren<Transform>().gameObject);
+       // Debug.Log(myController.Path[myController.currentMarker].gameObject);
+
+        if(Vector3.Distance(myController.gameObject.transform.GetChild(0).position,myController.Path[myController.currentMarker].position) <= 2f){
+            myController.Cyclepath();
+        }
+        owner.CheckForDeactivation();
+        owner.CheckForSight();
     }
     public void Exit(){
-        Debug.Log("exit test state");
-        //Do Nothing
     }
 }
 public class Chase : IState 
 {
     EnemyAI owner;
+    public GameObject myParentObject;
 
     public Chase (EnemyAI owner) {this.owner = owner;}
 
     public void Enter(GameObject parentObject){
-        Debug.Log("entering test state, my object is:" + parentObject);
-        //Set Player: Robot/SpiderAIDriver/Target(Transform)
+        owner.SetDestination (owner.playerPosition);
     }
     public void Execute(){
-       
-        //If Drone is within x distance from player: Gameover
+        owner.CheckForNonSight();
+        owner.CheckForDeactivation();
+        if(Vector3.Distance(myParentObject.transform.GetChild(0).position, owner.playerPosition.position) >= .05f){
+            //GameOver
+       }
+    
     }
     public void Exit(){
-        Debug.Log("exit test state");
     }
 }

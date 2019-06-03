@@ -41,8 +41,8 @@ public class Door : MonoBehaviour
         myAnimator.SetBool("Open", false);
         }
     }
-    public void UnlockDoor(){
-        
+    public void UnlockDoor(bool locked){
+        isLocked = locked;
     }
     IEnumerator Timer(){
         if(timeRemaining >= 0)
