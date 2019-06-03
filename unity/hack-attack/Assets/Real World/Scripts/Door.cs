@@ -42,7 +42,7 @@ public class Door : MonoBehaviour
         }
     }
     public void UnlockDoor(){
-        
+        isLocked = false;
     }
     IEnumerator Timer(){
         if(timeRemaining >= 0)

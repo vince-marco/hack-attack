@@ -6,9 +6,6 @@ using UnityEngine.UI;
 public class VirtualDoor : MonoBehaviour {
 
     [SerializeField] string id = "door";
-    [SerializeField] bool locked = false;
-    [SerializeField] bool armed = false;
-    [SerializeField] bool opened = false;
     [SerializeField] float startupDelay = 5.0f;
     [SerializeField] VirtualSystem system;
     private VirtualCmd[]  commands = {
@@ -47,26 +44,14 @@ public class VirtualDoor : MonoBehaviour {
         }
     }
 
-  void Lock(bool alocked) {
-    locked = alocked;
-    string msg = "Door: " + id + " : locked\n";
+  void Unlock() {
+    Door door = gameObject.GetComponent("Door") as Door;
+    door.UnlockDoor();
+    string msg = "Door: " + id + " : unlocked\n";
     system.textview.text += msg;
   }
 
-  void Open(bool aopened) {
-    Transform child = gameObject.transform.FindChild("Door");
-    if (locked == false) {
-      if (opened && aopened == false) {   // close door
-        child.gameObject.SetActive(opened);
-        opened = aopened;
-        string msg = "Door: " + id + " : closed\n";
-        system.textview.text += msg;
-      } else if (opened == false && aopened) {        // open door
-        child.gameObject.SetActive(opened);
-        opened = aopened;
-        string msg = "Door: " + id + " : opened\n";
-        system.textview.text += msg;
-      }
-    }    
+  void Help() {
+
   }
 }
