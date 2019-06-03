@@ -61,7 +61,7 @@ public class Patrol : IState
     public void Enter(GameObject parentObject){
         Debug.Log("entering test state, my object is:" + parentObject);
         owner.Cyclepath();
-        myAI.IsLooking = true;
+        //myAI.IsLooking = true;
         
         //Set 1st Patrol Point: Robot/SpiderAIDriver/Target(Transform)
     }
