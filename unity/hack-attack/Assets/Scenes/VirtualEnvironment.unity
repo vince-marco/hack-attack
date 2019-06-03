@@ -4601,6 +4601,13 @@ PrefabInstance:
       propertyPath: driver
       value: 
       objectReference: {fileID: 265998325}
+    - target: {fileID: 2078236744798031737, guid: 3bebd5deb11784c4b80ffccabe56bbc7,
+        type: 3}
+      propertyPath: consoleGreeting
+      value: 'Toggle the console with the "=" (equals) key.
+
+'
+      objectReference: {fileID: 0}
     - target: {fileID: 5100326922510240402, guid: 3bebd5deb11784c4b80ffccabe56bbc7,
         type: 3}
       propertyPath: m_IsActive
@@ -8019,7 +8026,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textview: {fileID: 1388276016}
   driver: {fileID: 265998325}
-  consoleGreeting: 
+  consoleGreeting: 'Toggle the console with the "=" (equals) key.
+
+'
   term1Greeting: 
   term2Greeting: 
   term3Greeting: 

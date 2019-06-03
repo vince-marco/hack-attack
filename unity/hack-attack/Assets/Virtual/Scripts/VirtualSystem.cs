@@ -10,10 +10,10 @@ public class VirtualSystem : MonoBehaviour {
     private float timeLeft = 30.0f;
     [SerializeField] public Text textview;
     [SerializeField] public com.ootii.Actors.SpiderDriver driver;
-    [TextArea(2, 5)][SerializeField] string consoleGreeting;
-    [TextArea(2, 5)][SerializeField] string term1Greeting;
-    [TextArea(2, 5)][SerializeField] string term2Greeting;
-    [TextArea(2, 5)][SerializeField] string term3Greeting;
+    [TextArea(2, 5)][SerializeField] public string consoleGreeting;
+    [TextArea(2, 5)][SerializeField] public string term1Greeting;
+    [TextArea(2, 5)][SerializeField] public string term2Greeting;
+    [TextArea(2, 5)][SerializeField] public string term3Greeting;
     private VirtualCmd[]  commands = {};
 
     private ArrayList doors = new ArrayList();
@@ -33,7 +33,7 @@ public class VirtualSystem : MonoBehaviour {
         textview.text += "VirtualSystem...running.\n\n";
         timeLeft = 30.0f;
       }
-      if (Input.GetKeyUp("`")) {
+      if (Input.GetKeyUp("=")) {
         Debug.Log("Should open console...");
         Transform canvas = transform.Find("Canvas");
         bool isConsole = canvas.gameObject.active;
