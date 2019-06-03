@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class VirtualDoor : MonoBehaviour {
 
-    [SerializeField] string id = "door";
+    [SerializeField] public string id = "door";
     [SerializeField] float startupDelay = 5.0f;
     [SerializeField] VirtualSystem system;
     private VirtualCmd[]  commands = {
@@ -25,6 +25,7 @@ public class VirtualDoor : MonoBehaviour {
   // Start is called before the first frame update
     void Start()
     {
+      system.RegisterDoor(this);
 //      myAnimator = gameObject.GetComponent("Animator") as Animator;
       string msg = "Door: " + id + " : registering door\n";
         system.textview.text += msg;

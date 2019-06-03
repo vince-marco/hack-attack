@@ -10,6 +10,8 @@ public class VirtualTerm : MonoBehaviour
     [SerializeField] Text term3;
     [SerializeField] Text console;
 
+    [SerializeField] VirtualSystem virtualsys;
+
     private Text term;
 
     // Start is called before the first frame update
@@ -46,9 +48,7 @@ public class VirtualTerm : MonoBehaviour
         }
         else
         {
-            term.text += "\n> ";
-            term.text += input.text;
-            term.text += "...executing\n";
+            virtualsys.DoCommand(cmd, term);
         }
         input.text = "";
     }
