@@ -60,8 +60,8 @@ public class Chase : IState
     public void Execute(){
         owner.CheckForNonSight();
         owner.CheckForDeactivation();
-        if(Vector3.Distance(myParentObject.transform.GetChild(0).position, owner.playerPosition.position) >= .05f){
-            //GameOver
+        if(Vector3.Distance(owner.myRobot.position, owner.playerPosition.position) <= 1f){
+            owner.myLevelManager.LoadLevel("LoseScreen");
        }
     
     }
