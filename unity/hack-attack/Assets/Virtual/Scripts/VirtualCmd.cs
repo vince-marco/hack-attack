@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+public class VirtualCmd {
 
-[CreateAssetMenu(menuName = "VirtualCmd")]
-public class VirtualCmd : ScriptableObject {
-
-    [SerializeField] string vname;  
-    [SerializeField] string usage;  
-   [TextArea(10, 14)][SerializeField] string helptext;
+    string cmd = "help";
+    string usage = "";
+    string help = "";
+    public VirtualCmd(string acmd, string ausage, string ahelp) {
+        cmd = acmd;
+        usage = ausage;
+        help = ahelp;
+    }
 }
