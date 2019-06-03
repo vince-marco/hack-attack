@@ -10,6 +10,8 @@ public class VirtualTerm : MonoBehaviour
     [SerializeField] Text term3;
     [SerializeField] Text console;
 
+    [SerializeField] VirtualSystem virtualsys;
+
     private Text term;
 
     // Start is called before the first frame update
@@ -18,6 +20,10 @@ public class VirtualTerm : MonoBehaviour
         var input = gameObject.GetComponent<InputField>();
         input.onEndEdit.AddListener(SubmitCmd);
         term = term1;
+        console.text += virtualsys.consoleGreeting;
+        term1.text += virtualsys.term1Greeting;
+        term2.text += virtualsys.term2Greeting;
+        term3.text += virtualsys.term3Greeting;
     }
 
     // Update is called once per frame
@@ -46,9 +52,7 @@ public class VirtualTerm : MonoBehaviour
         }
         else
         {
-            term.text += "\n> ";
-            term.text += input.text;
-            term.text += "...executing\n";
+            virtualsys.DoCommand(cmd, term);
         }
         input.text = "";
     }
