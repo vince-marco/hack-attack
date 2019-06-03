@@ -14,9 +14,8 @@ public class TestState : IState
         Debug.Log("entering test state, my object is:" + parentObject);
         myParentObject = parentObject;
     }
-    public void Execute(){
-        Debug.Log("executing test state");
-    }
+    public void Execute(){}
+       
     public void Exit(){
         Debug.Log("exit test state");
     }
@@ -41,7 +40,7 @@ public class Inactive : IState
         //myAI.IsInvoking = false;
     }
      public void Execute(){
-        Debug.Log("executing test state");
+        
         //Do Nothing
         //Idle or Inactive Animation?
     }
@@ -66,7 +65,7 @@ public class Patrol : IState
         //Set 1st Patrol Point: Robot/SpiderAIDriver/Target(Transform)
     }
     public void Execute(){
-        Debug.Log("executing test state");
+       
         //Check for reaching 1st Patrol Point
         //If yes, Set nth Patrol Point + 1: Robot/SpiderAIDriver/Target(Transform)
         //else do nothing
@@ -87,7 +86,7 @@ public class Chase : IState
         //Set Player: Robot/SpiderAIDriver/Target(Transform)
     }
     public void Execute(){
-        Debug.Log("executing test state");
+       
         //If Drone is within x distance from player: Gameover
     }
     public void Exit(){

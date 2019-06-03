@@ -2247,7 +2247,7 @@ Transform:
   m_LocalScale: {x: 100, y: 0.5, z: 100}
   m_Children: []
   m_Father: {fileID: 726275036}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &417180192 stripped
 Transform:
@@ -3687,8 +3687,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 172024725}
-  - {fileID: 174502756}
   - {fileID: 406206766}
+  - {fileID: 1298408907}
+  - {fileID: 174502756}
   - {fileID: 417180192}
   - {fileID: 279650914}
   - {fileID: 115023877}
@@ -3700,7 +3701,6 @@ Transform:
   - {fileID: 438023509}
   - {fileID: 1000834000}
   - {fileID: 45439245}
-  - {fileID: 1298408907}
   - {fileID: 787104196}
   - {fileID: 349595205}
   - {fileID: 1137478071}
@@ -5634,7 +5634,7 @@ Transform:
   - {fileID: 1964317264}
   - {fileID: 1457903146}
   m_Father: {fileID: 726275036}
-  m_RootOrder: 14
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1355314246
 PrefabInstance:
@@ -5877,6 +5877,21 @@ PrefabInstance:
         type: 3}
       propertyPath: _IsEnabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6819642430403007340, guid: 239d04538034349849f320e4f4cf7534,
+        type: 3}
+      propertyPath: _IsGravityRelative
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6819642430403007340, guid: 239d04538034349849f320e4f4cf7534,
+        type: 3}
+      propertyPath: _OrientToGround
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6819642430403007340, guid: 239d04538034349849f320e4f4cf7534,
+        type: 3}
+      propertyPath: EditorWalkOnWalls
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 239d04538034349849f320e4f4cf7534, type: 3}
